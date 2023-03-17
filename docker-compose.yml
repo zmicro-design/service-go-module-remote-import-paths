@@ -1,0 +1,25 @@
+services:
+  gomirror-hack-gitlab:
+    restart: always
+    image: whatwewant/gomirror-hack-gitlab:${SERVICE_GOMIRROR_HACK_GITLAB_IMAGE_VERSION}
+    platform: linux/amd64
+    ports:
+      - 0.0.0.0:${SERVICE_GOMIRROR_HACK_GITLAB_PORT}:${SERVICE_GOMIRROR_HACK_GITLAB_PORT}
+    command: gzterminal server --port $SERVICE_GOMIRROR_HACK_GITLAB_PORT --username $SERVICE_GOMIRROR_HACK_GITLAB_USERNAME --password $SERVICE_GOMIRROR_HACK_GITLAB_PASSWORD
+    environment:
+      PORT: $SERVICE_GOMIRROR_HACK_GITLAB_PORT
+      USERNAME: ${SERVICE_GOMIRROR_HACK_GITLAB_USERNAME}
+      PASSWORD: ${SERVICE_GOMIRROR_HACK_GITLAB_PASSWORD}
+    volumes:
+      # mount services in
+      - ${SERVICE_GOMIRROR_HACK_GITLAB_HOME}/plugins/service/services:/usr/local/lib/zmicro/plugins/service/services
+      #
+      - ${SERVICE_GOMIRROR_HACK_GITLAB_DATA_HOME}:/data
+      - ${SERVICE_GOMIRROR_HACK_GITLAB_CONFIGS_HOME}:/configs
+      # Docker
+      - /var/run/docker.sock:/var/run/docker.sock
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress

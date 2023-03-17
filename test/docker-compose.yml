@@ -1,0 +1,13 @@
+services:
+  gomirror-hack-gitlab:
+    restart: always
+    image: whatwewant/gomirror-hack-gitlab:${SERVICE_GOMIRROR_HACK_GITLAB_IMAGE_VERSION}
+    environment:
+      PORT: $SERVICE_GOMIRROR_HACK_GITLAB_PORT
+      USERNAME: ${SERVICE_GOMIRROR_HACK_GITLAB_USERNAME}
+      PASSWORD: ${SERVICE_GOMIRROR_HACK_GITLAB_PASSWORD}
+      
+networks:
+  default:
+    external: true
+    name: compose-ingress
