@@ -3,9 +3,8 @@ services:
     restart: always
     image: whatwewant/gomirror-hack-gitlab:${SERVICE_GOMIRROR_HACK_GITLAB_IMAGE_VERSION}
     environment:
-      PORT: $SERVICE_GOMIRROR_HACK_GITLAB_PORT
-      USERNAME: ${SERVICE_GOMIRROR_HACK_GITLAB_USERNAME}
-      PASSWORD: ${SERVICE_GOMIRROR_HACK_GITLAB_PASSWORD}
+      SOURCE: http://${SERVICE_GOMIRROR_HACK_GITLAB_SOURCE_HOST}
+      TARGET: http://${SERVICE_GOMIRROR_HACK_GITLAB_TARGET_HOST}
       
 networks:
   default:

@@ -10,9 +10,8 @@ check() {
     cat $SERVICE_CONFIG
   fi
 
-  service::config_set SERVICE_GOMIRROR_HACK_GITLAB_PORT text "Port" 8024
-  service::config_set SERVICE_GOMIRROR_HACK_GITLAB_USERNAME text "Username"
-  service::config_set SERVICE_GOMIRROR_HACK_GITLAB_PASSWORD text "Password"
+  service::config_set SERVICE_GOMIRROR_HACK_GITLAB_SOURCE_HOST text "Source Host (example: 10.0.0.1:8080)"
+  service::config_set SERVICE_GOMIRROR_HACK_GITLAB_TARGET_HOST text "Target Host (example: gitlab.example.com)"
 }
 
 check $@
