@@ -3,19 +3,11 @@ services:
     restart: always
     image: whatwewant/gomirror-hack-gitlab:${SERVICE_GOMIRROR_HACK_GITLAB_IMAGE_VERSION}
     platform: linux/amd64
-    ports:
-      - 0.0.0.0:${SERVICE_GOMIRROR_HACK_GITLAB_PORT}:8080
+    # ports:
+    #   - 0.0.0.0:${SERVICE_GOMIRROR_HACK_GITLAB_PORT}:8080
     environment:
       SOURCE: http://${SERVICE_GOMIRROR_HACK_GITLAB_SOURCE_HOST}
       TARGET: http://${SERVICE_GOMIRROR_HACK_GITLAB_TARGET_HOST}
-    volumes:
-      # mount services in
-      - ${SERVICE_GOMIRROR_HACK_GITLAB_HOME}/plugins/service/services:/usr/local/lib/zmicro/plugins/service/services
-      #
-      - ${SERVICE_GOMIRROR_HACK_GITLAB_DATA_HOME}:/data
-      - ${SERVICE_GOMIRROR_HACK_GITLAB_CONFIGS_HOME}:/configs
-      # Docker
-      - /var/run/docker.sock:/var/run/docker.sock
       
 networks:
   default:
