@@ -1,3 +1,3 @@
-NAME=gomirror-hack-gitlab
+NAME=go-module-remote-import-paths
 VERSION=v0.0.4
-DESCRIPTION="gomirror-hack-gitlab Service"
+DESCRIPTION="go-module-remote-import-paths Service"

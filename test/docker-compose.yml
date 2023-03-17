@@ -1,10 +1,9 @@
 services:
-  gomirror-hack-gitlab:
+  go-module-remote-import-paths:
     restart: always
-    image: whatwewant/gomirror-hack-gitlab:${SERVICE_GOMIRROR_HACK_GITLAB_IMAGE_VERSION}
+    image: whatwewant/go-module-remote-import-paths:${SERVICE_GO_MODULE_REMOTE_IMPORT_PATHS_IMAGE_VERSION}
     environment:
-      SOURCE: http://${SERVICE_GOMIRROR_HACK_GITLAB_SOURCE_HOST}
-      TARGET: http://${SERVICE_GOMIRROR_HACK_GITLAB_TARGET_HOST}
+      GIT_SERVER: ${SERVICE_GO_MODULE_REMOTE_IMPORT_PATHS_GIT_SERVER}
       
 networks:
   default:

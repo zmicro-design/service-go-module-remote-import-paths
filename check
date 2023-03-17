@@ -10,8 +10,7 @@ check() {
     cat $SERVICE_CONFIG
   fi
 
-  service::config_set SERVICE_GOMIRROR_HACK_GITLAB_SOURCE_HOST text "Source Host (example: 10.0.0.1:8080)"
-  service::config_set SERVICE_GOMIRROR_HACK_GITLAB_TARGET_HOST text "Target Host (example: gitlab.example.com)"
+  service::config_set SERVICE_GO_MODULE_REMOTE_IMPORT_PATHS_GIT_SERVER text "Git Server Host (example: http://10.0.0.1:8888)"
 }
 
 check $@
