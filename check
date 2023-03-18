@@ -10,7 +10,7 @@ check() {
     cat $SERVICE_CONFIG
   fi
 
-  service::config_set SERVICE_GO_MODULE_REMOTE_IMPORT_PATHS_GIT_SERVER_MAP text "Git Server Map (example: {\"go.example.com\": \"http://10.0.0.1:8888\"})"
+  service::config_set SERVICE_GO_MODULE_REMOTE_IMPORT_PATHS_GIT_SERVER_MAP text "Git Server Map (example: {go.example.com: http://10.0.0.1:8888})"
 }
 
 check $@
