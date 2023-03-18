@@ -3,7 +3,7 @@ services:
     restart: always
     image: whatwewant/go-module-remote-import-paths:${SERVICE_GO_MODULE_REMOTE_IMPORT_PATHS_IMAGE_VERSION}
     environment:
-      GIT_SERVER: ${SERVICE_GO_MODULE_REMOTE_IMPORT_PATHS_GIT_SERVER}
+      GIT_SERVER_MAP: ${SERVICE_GO_MODULE_REMOTE_IMPORT_PATHS_GIT_SERVER_MAP}
       
 networks:
   default:
